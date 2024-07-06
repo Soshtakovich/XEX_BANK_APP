@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XEX BANK - Portfolio Project</title>
+    <style>
+        /* Add your CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+            background-image: url("https://cdn.wallpapersafari.com/34/98/yznZmQ.jpg"); 
+        }
+
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 18px;
+        }
+        .intro {
+            text-align: center;
+            padding: 100px 20px;
+        }
+        .intro h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+        .intro p, .about p {
+            font-size: 1.5em;
+            margin-bottom: 40px;
+        }
+        .intro button {
+            padding: 10px 20px;
+            font-size: 1.2em;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .features {
+            padding: 50px 20px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .feature {
+            text-align: center;
+            width: 30%;
+            margin-bottom: 40px;
+        }
+
+        .feature h2{
+            text-transform: uppercase;
+        }
+        .feature img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .about {
+            padding: 50px 20px;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .about-box {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: auto; /* Fixed width */
+            margin: 20px;
+        }
+        
+        .about-box p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .about-box a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        
+        .about-box a:hover {
+            text-decoration: underline;
+        }
+
+        .about h2 {
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            text-align: center;
+            text-transform: uppercase;
+        }
+        .about p {
+            font-size: 1.2em;
+            line-height: 1.6;
+        }
+        .team-members {
+            margin-top: 20px;
+            text-align: center;
+            font-weight: bolder;
+            font-size: 25pt;
+            
+        }
+        .team-members a {
+            display: inline-block;
+            
+            color: gold;
+            text-decoration: none;
+            text-align: center;
+        }
+        .team-members a:hover {
+            text-decoration:solid;
+        }
+
+       .about button {
+            padding: 10px 20px;
+            font-size: 1.2em;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+        }
+
+
+        .how-to-use {
+            padding: 50px 20px;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .how-to-use-box {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: auto; /* Fixed width */
+            margin: 20px;
+        }
+        
+        .how-to-use-box h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        
+        .how-to-use-box p, .how-to-use-box ol {
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .how-to-use-box ol {
+            padding-left: 20px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <div>
+            <h2>XEX BANK</h2>
+        </div>
+        <nav>
+            <a href="#features">Features</a>
+            <a href="#about">About</a>
+            <a href="#how-to-use">How to Use</a>
+            <a href="https://banking.zakesmatsimbe.tech/" target="_blank">Go to App</a>
+            <a href="https://github.com/Soshtakovich/XEX_BANK_APP" target="_blank">GitHub</a>
+        </nav>
+    </header>
+
+    <section class="intro">
+        <div>
+            <h1>Welcome to XEX BANK</h1>
+            <p>Exploring the world of banking systems through my portfolio project.</p>
+            <a href="https://banking.zakesmatsimbe.tech/" target="_blank"><button>Go to App</button></a>
+            
+        </div>
+    </section>
+
+    <section id="features" class="features">
+        <div class="feature">
+            <img src="land/accounts.png" alt="Accounts">
+            <h2>View Account Balances</h2>
+            <p>Easily view your account balances in real-time across different accounts.</p>
+        </div>
+
+        <div class="feature">
+            <img src="land/transfer.png" alt="Transfers">
+            <h2>Transfer Money Between Accounts</h2>
+            <p>Securely transfer funds between your accounts with just a few clicks.</p>
+        </div>
+        <div class="feature">
+            <img src="land/withdraw.png" alt="Withdraws">
+            <h2>Withdraw Money (ATM Code Generation)</h2>
+            <p>Generate secure codes for ATM withdrawals to access your funds conveniently.</p>
+        </div>
+
+        <div class="feature">
+            <img src="land/transactions.png" alt="Transactions">
+            <h2>View Accounts Transactions</h2>
+            <p>Easily view your transactions across different accounts.</p>
+        </div>
+
+
+    </section>
+
+    <section id="about" class="about">
+        <div>
+            <h2>About XEX BANK</h2>
+
+            <div class="about-box">
+                <p>
+                    The idea behind XEX BANK was born out of my deep curiosity about how banking systems work. As someone who frequently uses online banking apps, I often found myself wondering about the complex processes happening behind the scenes. How are transactions processed securely? How is sensitive data managed and stored? These questions fueled my desire to dive into the world of database-oriented applications.
+                </p>
+                <p>
+                    My journey with XEX BANK began with a simple goal: to build a fully functional online banking system that would allow me to explore and understand these processes. Starting with the basics, I focused on designing a robust backend that could handle various banking operations, such as viewing account balances, transferring money between accounts, and generating secure codes for ATM withdrawals.
+                </p>
+                <p>
+                    Over several months, I dedicated my time to learning and implementing various technologies and frameworks. I chose to use Flask for the backend due to its flexibility and ease of integration with other tools. For the frontend, I relied on HTML, CSS, and JavaScript to create a user-friendly interface that would provide a seamless experience for users.
+                </p>
+                <p>
+                    Throughout the development process, I faced numerous challenges, from ensuring data security to optimizing database queries for faster performance. However, each obstacle was a learning opportunity that helped me grow as a developer. This project also gave me the chance to explore different aspects of software development, from designing user interfaces to writing server-side logic.
+                </p>
+                <p>
+                    XEX BANK is not just a portfolio project for me; it's a testament to my passion for technology and my commitment to continuous learning. I hope that through this project, I can demonstrate my skills and inspire others who share a similar curiosity about the world of banking systems and database-oriented applications.
+                </p>
+                <p>
+                    This project is a Portfolio Project for Holberton School, where I have been honing my skills and expanding my knowledge in software development. <a href="link_to_holberton_website" target="_blank">Holberton School</a>
+                </p>
+            </div>
+           
+
+            <section id="how-to-use" class="how-to-use">
+                <div class="how-to-use-box">
+                    <h2>How to Use the App</h2>
+                    <p>
+                        To get started with XEX BANK, follow these steps:
+                    </p>
+                    <ol>
+                        <li>Sign up for an account using the signup page.</li>
+                        <li>Log in using the information you provided during signup.</li>
+                        <li>Upon logging in, you will have Savings, Credit, Investments, and Debit accounts created for you with some random amounts so that you can start transacting immediately.</li>
+                    </ol>
+                </div>
+            </section>
+
+
+
+            <div class="team-members">
+                <a href="https://www.linkedin.com/in/zakes-matsimbe-004722270" target="_blank">LinkedIn</a>
+                <a href="https://github.com/Soshtakovich" target="_blank">GitHub</a>
+                <a href="https://x.com/Zakes_Matsimbe" target="_blank">Twitter</a>
+            </div>
+
+            <a class="git_hb" href="https://github.com/Soshtakovich/XEX_BANK_APP" target="_blank"><button>GitHub Repository</button></a>
+
+        </div>
+    </section>
+
+
+
+</body>
+</html>
