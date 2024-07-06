@@ -1,0 +1,62 @@
+@import url('index.css');
+
+/* styles.css */
+
+.withdraw_box {
+    
+    padding: 20px;
+    width: auto;
+    width: 90%;
+    margin: 20px auto;
+
+
+    text-align: center;
+
+    padding: 20px;
+    background-color: var(--background_colour); /* Optional: adds a background color */
+    box-shadow: 2px 2px 5px var(--background_colour); /* Optional: adds a subtle shadow */
+    border-radius: 20px; /* Optional: rounds the corners of the box */
+}
+
+.row {
+    margin-bottom: 10px;
+}
+
+label {
+    display: inline-block;
+    width: 60px;
+    text-align: right;
+    margin-right: 10px;
+
+    font-size: 20pt;
+    font-weight: bolder;
+}
+
+select, .withdraw_amount input{
+    width: max-content;
+    padding: 5px;
+    font-size: 16px;
+    text-align: center;
+
+    border: 2px solid var(--border_colour);
+    border-radius: 20px; /* Optional: rounds the corners of the box */
+    background-color: var(--hover_colour); /* Optional: adds a background color */
+    font-weight: bolder;
+}
+.row {
+    margin-bottom: 40px; /* Increase or decrease as needed for spacing */
+}
+
+ .withdraw-btn {
+    width: 100%; /* Button takes full width of its container */
+    padding: 10px;
+    color: var(--background_colour); /* Use your color variable */
+    border: none;
+    cursor: pointer;
+    box-sizing: border-box; /* Include padding and border in width calculation */
+    text-align: center; /* Center align text within the button */
+    border-radius: 20px; /* Optional: rounds the corners of the button */
+    background-color: var(--nav_tab_border_colour); /* Use your background color variable */
+    font-size: 20pt;
+    font-weight: bolder;
+}

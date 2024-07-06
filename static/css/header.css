@@ -1,0 +1,50 @@
+@import url('index.css');
+
+
+
+.left-side {
+    display: flex;
+    align-items: center;
+    border: 2px solid none;
+}
+
+.left-side img {
+    width: 50px; /* Adjust the size of your logo as needed */
+    height: 50px;
+    margin-right: 10px;
+    margin-top: 0px;
+    border-radius: 50%; /* Makes the image circular */
+    border: 2px solid var(--border_colour); 
+}
+
+.left-side span {
+    font-size: 10px;
+    font-weight: lighter;
+
+    margin-left: -9px;
+    margin-top: 20px;
+}
+
+.right-side {
+    display: flex;
+    align-items: center;
+    border: 2px solid none;
+    margin-top: 0px;
+
+    color: var(--background_colour);
+}
+
+.horizontal-items {
+    display: flex;
+
+    font-size: 10px;
+    font-weight:lighter;
+    margin-left: auto; /* Pushes right-side to the right */
+}
+
+.horizontal-items .item {
+    margin-right: 10px;
+    padding: 5px 10px;
+    background-color: var(--tab_colour); /* Optional: background color for items */
+    border-radius: 5px; /* Optional: rounded corners for items */
+}

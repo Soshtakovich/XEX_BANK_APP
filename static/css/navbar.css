@@ -1,0 +1,34 @@
+@import url('index.css');
+
+.navbar-box {
+    padding: 1px;
+    width : 100%;
+    border: 1px solid var(--nav_border_colour);
+    border-radius: 6%; /* Optional: rounds the corners of the box */
+}
+
+.nav-content {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+}
+
+.nav-button {
+    padding: 20px;
+    cursor: pointer;
+    border-bottom: 1px solid var(--nav_tab_border_colour); /* Optional: Adds a border between items */
+    border-top: 1px solid var(--nav_tab_border_colour); /* Optional: Adds a border between items */
+    border-radius: 15%; /* Optional: rounds the corners of the box */
+    text-transform: uppercase;
+    font-weight: bolder;
+}
+
+.nav-button:hover {
+    background-color: var(--tab_colour); /* Light gray background on hover */
+    color: var(--background_colour);
+}
+
+.nav-button.active {
+    background-color: #007bff; /* Blue background when active */
+    color: #fff; /* White text color when active */
+}
+

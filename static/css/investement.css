@@ -1,0 +1,56 @@
+@import url('index.css');
+
+
+/* styles.css */
+
+/* Reset some default browser styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* Three equal columns */
+    gap: 10px;
+}
+
+.grid-item {
+
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 2px 2px 5px var(--background_colour);
+}
+
+.grid-item.picture {
+    grid-column: 1 / 2; /* Picture spans from column 1 to column 2 */
+    text-align: center;
+}
+
+.grid-item.labels {
+    grid-column: 2 / 3; /* Labels span from column 2 to column 3 */
+    text-align: left;
+}
+
+.grid-item.values {
+    grid-column: 3 / 4; /* Values span from column 3 to column 4 */
+    text-align: left;
+}
+
+.grid-item img {
+    max-width: 100%; /* Ensure the image does not exceed its container */
+    height: auto;
+    border-radius: 8px;
+}
+
+.invest-label, .invest-info  {
+    margin-bottom: 20px; /* Add space between each credit label */
+    font-size: 10pt;
+    font-weight: bolder;
+    text-transform: uppercase;
+    white-space: nowrap; /* Prevent wrapping */
+}
+

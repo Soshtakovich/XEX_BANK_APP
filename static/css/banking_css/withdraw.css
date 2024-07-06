@@ -1,0 +1,104 @@
+@import url('bank.css');
+
+@import url('bank.css');
+
+/* styles.css */
+
+.withdraw-cont {
+    padding: 10px;
+    background-color: var(--background_colour);
+    border-radius: 5px;
+}
+
+.item-name {
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+}
+
+.withdraw-box {
+    padding: 20px;
+    margin: 20px auto;
+    background-color: var(--background_colour);
+    box-shadow: 2px 2px 5px var(--background_colour);
+    border-radius: 20px;
+    width: 90%;
+    max-width: 500px; /* Limits the width on larger screens */
+    text-align: center;
+}
+
+.row {
+    margin-bottom: 20px; /* Adjust as needed for spacing */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+label {
+    width: 60px;
+    text-align: right;
+    margin-right: 10px;
+    font-size: 1em; /* Use em for responsive font sizing */
+    font-weight: bold;
+}
+
+select, .withdraw-amount input {
+    width: 100%;
+    max-width: 200px; /* Limits the width of the select box */
+    padding: 5px;
+    font-size: 1em; /* Use em for responsive font sizing */
+    text-align: center;
+    border: 2px solid var(--border_colour);
+    border-radius: 20px;
+    background-color: var(--hover_colour);
+    font-weight: bold;
+}
+
+.withdraw-btn {
+    width: 100%;
+    padding: 10px;
+    color: var(--background_colour);
+    border: none;
+    cursor: pointer;
+    box-sizing: border-box;
+    text-align: center;
+    border-radius: 20px;
+    background-color: var(--nav_tab_border_colour);
+    font-size: 1em; /* Use em for responsive font sizing */
+    font-weight: bold;
+}
+
+@media screen and (max-width: 768px) {
+    .withdraw-box {
+        padding: 15px;
+    }
+
+    .row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    label {
+        text-align: left;
+        margin-right: 0;
+        margin-bottom: 5px;
+    }
+
+    select, .withdraw-amount input {
+        max-width: 100%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .withdraw-box {
+        padding: 10px;
+    }
+
+    .row {
+        margin-bottom: 15px;
+    }
+
+    .withdraw-btn {
+        font-size: 0.9em;
+    }
+}

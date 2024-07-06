@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XEX BANK</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/dash.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/bank.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/transaction.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/cont.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/transfer.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/withdraw.css') }}">
+
+</head>
+<body>
+    <div class="container">
+        <!-- Row 1: Header -->
+        <header>
+            <div class="logo">
+                <img src="{{ url_for('static', filename='assets/imgz/logo.png') }}" alt="XEX BANK Logo">
+                
+            </div>
+            <div class="user-details">
+                <p class="userdet" >Hi, <span id="user-name">User</span></p>
+            </div>
+            <div class="messages">
+                <p class="usermsg">Messages</p>
+            </div>
+            <div class="logout">
+                <p class="Logout" id="logoutBtn">Logout</p>
+            </div>
+        </header>
+
+        <!-- Row 2: Main Content -->
+        <div class="content">
+            <div class="navbar">
+                <ul>
+                    <li class="nav-button"><a href="#" id="dashboard-tab" data-content-id="dashboard" onclick="showContent(event, 'dashboard')">Dashboard</a></li>
+                    <li class="nav-button"><a href="#" id="accounts-tab" data-content-id="accounts" onclick="showContent(event, 'accounts')">Accounts</a></li>
+                    <li class="nav-button"><a href="#" id="transactions-tab" data-content-id="transactions" onclick="showContent(event, 'transactions')">Transactions</a></li>
+                    <li class="nav-button"><a href="#" id="transfer-tab" data-content-id="transfer" onclick="showContent(event, 'transfer')">Transfer</a></li>
+                    <li class="nav-button"><a href="#" id="withdraw-tab" data-content-id="withdraw" onclick="showContent(event, 'withdraw')">Withdraw</a></li>
+                    <li class="nav-button"><a href="#" id="settings-tab" data-content-id="settings" onclick="showContent(event, 'settings')">Settings</a></li>
+                </ul>
+            </div>
+            
+            <div class="main-section">
+                <div id="dashboard" class="tabcontent">
+                    <!-- Dashboard content -->
+                    
+                    <div class="dashboard">
+                        <h1>Welcome to XEX BANK</h1>
+                        <div class="account-summary">
+                            <h2>Account Summary</h2>  <br> <br>
+
+
+                            <p>
+
+                                <div class="acc-info">
+                                    <div class="acc-balance-txt">Day To Day Account</div>
+                                    <div class="acc-balance">R <span id="debit-bal22">0,00</span></div>
+                                    
+                                </div>
+                            </p>
+
+                            <br><br>
+
+                            <p>
+
+                                <div class="acc-info">
+                                    <div class="acc-balance-txt">Savings Account</div>
+                                    <div class="acc-balance">R <span id="savings-bal22">0,00</span></div>
+                                    
+                                </div>
+
+                            </p> <br>
+
+                            
+
+                                    <div class="latest-transactions">
+                                        <!--<div class="transs"> <span >LATEST TRANSACTIONS</span></div>  <br>-->
+
+
+                                    </div>
+
+                        </div>
+                        <div class="actions">
+                            <button id="transfer-btn">Transfer Money</button>
+                            <button id="withdraw-btn">Withdraw Money</button>
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+                <div id="accounts" class="tabcontent">
+                    <!-- Accounts content -->
+                    
+                    <div class="acc-cont" id="acc-cont" style="display: block;">
+                        <div class="item-name"><span>Accounts</span></div>
+                        <br>
+                    
+                        <div class="row">
+                            <div class="column"><img src="{{ url_for('static', filename='assets/imgz/cards/debit.jpg') }}" alt="debit" class="card"></div>
+                            <div class="column"><div class="acc-name" id="debit">Day to Day</div></div>
+                            <div class="column">
+                                <div class="acc-info">
+                                    <div class="acc-av-balance">R <span id="debit-bal1">0,00</span></div>
+                                    <div class="acc-av-balance-txt">Available balance</div>
+                                </div>
+                            </div>
+                            <div class="column">
+                                <div class="acc-info">
+                                    <div class="acc-balance">R <span id="debit-bal2">0,00</span></div>
+                                    <div class="acc-balance-txt">Total balance</div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div class="row">
+                            <div class="column"><img src="{{ url_for('static', filename='assets/imgz/cards/savings.png') }}" alt="savings" class="card"></div>
+                            <div class="column"><div class="acc-name" id="savings">SAVINGS</div></div>
+                            <div class="column">
+                                <div class="acc-info">
+                                    <div class="acc-av-balance">R <span id="savings-bal1">0,00</span></div> 
+                                    <div class="acc-av-balance-txt">Available balance</div>
+                                </div>
+                            </div>
+                            <div class="column">
+                                <div class="acc-info">
+                                    <div class="acc-balance">R <span id="savings-bal2">0,00</span></div>
+                                    <div class="acc-balance-txt">Total balance</div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div class="row">
+                            <div class="column"><img src="{{ url_for('static', filename='assets/imgz/cards/credit.png') }}" alt="credit" class="card"></div>
+                            <div class="column"><div class="acc-name" id="creditcard">CREDIT CARD</div></div>
+                            <div class="column">
+                                <div class="acc-info">
+                                    <div class="acc-av-balance">R <span id="credit-bal1">0,00</span></div>
+                                    <div class="acc-av-balance-txt">Available balance</div>
+                                </div>
+                            </div>
+                            <div class="column">
+                                <div class="acc-info">
+                                    <div class="acc-balance">R <span id="credit-bal2">0,00</span></div>
+                                    <div class="acc-balance-txt">Total balance</div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div class="row">
+                            <div class="column"><img src="{{ url_for('static', filename='assets/imgz/cards/investement.png') }}" class="card"></div>
+                            <div class="column"><div class="acc-name" id="investment">INVESTMENT</div></div>
+                            <div class="column">
+                                <div class="acc-info">
+                                    <div class="acc-av-balance">R <span id="invest-bal1">0,00</span></div>
+                                    <div class="acc-av-balance-txt">Available balance</div>
+                                </div>
+                            </div>
+                            <div class="column">
+                                <div class="acc-info">
+                                    <div class="acc-balance">R <span id="invest-bal2">0,00</span></div>
+                                    <div class="acc-balance-txt">Total balance</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+                <div id="transactions" class="tabcontent">
+                    <!-- Transactions content -->
+                    <div class="item-name"><span>Transactions</span></div>
+                    <br>
+                       <table id="transactions-table">
+                            <thead>
+                                <tr>
+                                    <th>Transaction ID</th>
+                                    <th>Account</th>
+                                    <th>Transaction Type</th>
+                                    <th>Amount (R)</th>
+                                    <th>Description</th>
+                                    <th>Transaction Date</th>
+                                </tr>
+                            </thead>
+                            <tbody id="transactions-table-body">
+                                <!-- Transactions will be dynamically added here -->
+                            </tbody>
+                        </table>
+                </div>
+
+    
+    
+    <div id="transfer" class="tabcontent">
+    <!-- Transfer content -->
+    <div class="transfer-cont" id="transfer-cont" style="display: block;"> <!--TRANSFER-->
+        <div class="item-name"><span>Transfer</span></div>
+        <br>
+        <div class="trans-box">
+            <div class="row">
+                <label for="transferDropdownFrom">From:</label>
+                <select id="transferDropdownFrom">
+                    <option value="" disabled selected>Select account to transfer from</option>
+                    <option value="debit">Debit</option>
+                    <option value="savings">Savings</option>
+                    <option value="investment">Investments</option>
+                </select>
+            </div>
+            <div class="row">
+                <label for="transferDropdownTo">To:</label>
+                <select id="transferDropdownTo">
+                    <option value="" disabled selected>Select account to transfer to</option>
+                    <option value="debit">Debit</option>
+                    <option value="savings">Savings</option>
+                    <option value="investment">Investments</option>
+                </select>
+            </div>
+            <div class="row">
+                <label for="transferAmount">Amount:</label>
+                <div class="transfer-amount">
+                    <input type="number" id="transferAmount" step="any" placeholder="Transfer amount : R" required>
+                </div>
+            </div>
+            <button class="transfer-btn" onclick="handleTransfer()">Transfer</button>
+        </div>
+    </div>  <!--TRANSFER-->
+</div>
+
+<div id="withdraw" class="tabcontent">
+    <!-- Withdraw content -->
+    <div class="withdraw-cont" id="withdraw-cont" style="display: block;"> <!--WITHDRAW-->
+        <div class="item-name"><span>Withdrawals</span></div>
+        <br>
+        <div class="withdraw-box">
+            <div class="row">
+                <label for="withdrawDropdownFrom">From:</label>
+                <select id="withdrawDropdownFrom">
+                    <option value="" disabled selected>Select account to withdraw from</option>
+                    <option value="debit">Debit</option>
+                    <option value="savings">Savings</option>
+                    <option value="investment">Investments</option>
+                </select>
+            </div>
+            <div class="row">
+                <label for="withdrawAmount">Amount:</label>
+                <div class="withdraw-amount">
+                    <input type="number" id="withdrawAmount" step="any" placeholder="Withdrawal amount : R" required>
+                </div>
+            </div>
+            <button class="withdraw-btn" onclick="handleWithdraw()">Withdraw</button>
+        </div>
+    </div> <!--WITHDRAW-->
+</div>
+
+
+                <div id="settings" class="tabcontent">
+                    <!-- Settings content -->
+                    Settings Content
+                </div>
+            </div>
+        </div>
+
+        <!-- Row 3: Footer -->
+        <footer>
+            <!-- Footer content and contacts -->
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='assets/js/bank.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/js/dash.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/js/fetch-accounts.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/js/get_transactions.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/js/get_3_transactions.js') }}"></script>
+   <script src="{{ url_for('static', filename='assets/js/transact.js') }}"></script>
+   <script src="{{ url_for('static', filename='assets/js/logout.js') }}"></script>
+
+
+</body>
+</html>

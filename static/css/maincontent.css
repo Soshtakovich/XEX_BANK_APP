@@ -1,0 +1,64 @@
+@import url('index.css');
+
+.main_content  .Item-name{
+    font-size: 20pt;
+    font-weight: bolder;
+    margin-left: 5px;;
+}
+
+.Item-name-info {
+    display: grid;
+    gap: 10px; /* Space between rows */
+}
+
+.row {
+    display: grid;
+    grid-template-columns: repeat(4, auto); /* 4 columns with width based on content */
+    gap: 10px; /* Space between columns */
+
+    border: 2px solid var(--border_colour);
+    padding: 10px;
+    background-color: var(--background_colour); /* Optional: adds a background color */
+    box-shadow: 2px 2px 5px rgba(232, 12, 12, 0.1); /* Optional: adds a subtle shadow */
+    border-radius: 30px; /* Optional: rounds the corners of the box */
+
+    max-height: 150px;
+}
+
+.column {
+    padding: 5px;
+}
+
+.column span {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    text-align: center; /* Center text inside the span */
+}
+
+.column span img {
+    width: 70px; /* Adjust the size of your logo as needed */
+    height: 40px;
+    border-radius: 0%; /* Makes the image circular */
+    background-color: var(--body_background);
+}
+
+.column span .acc-name{
+    margin-top: 8%;
+    font-weight: bolder;
+    text-transform: uppercase;
+    font-size: medium;
+}
+.column span .acc-info{
+    margin-top: 5%;
+}
+
+.acc-av-balance, .acc-balance{
+    font-size: 13pt;
+    font-weight: bold;
+}
+
+.acc-av-balance-txt, .acc-balance-txt{
+    font-size: 10pt;
+    font-weight: lighter;
+}

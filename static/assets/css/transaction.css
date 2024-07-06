@@ -1,0 +1,32 @@
+/* styles.css */
+
+/* Style for the transactions table */
+#transactions-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+/* Table header */
+#transactions-table th {
+    background-color: #f2f2f2;
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+/* Table rows */
+#transactions-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    font-size: small;
+}
+
+/* Alternate row color */
+#transactions-table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+
+/* CSS to style the table and its headings */
+

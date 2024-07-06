@@ -1,0 +1,113 @@
+@import url('bank.css');
+
+.acc-cont {
+    padding: 10px;
+    background-color: var(--background_colour);
+    border-radius: 5px;
+}
+
+.item-name {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px solid var(--border_colour);
+    padding: 8px;
+    background-color: var(--background_colour);
+    box-shadow: 2px 2px 5px rgba(232, 12, 12, 0.1);
+    border-radius: 30px;
+    margin-bottom: 25px;
+}
+
+.column {
+    flex: 1;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+/* Additional class for image column to align start */
+.column.img-column {
+    align-items: flex-start;
+}
+
+/* Additional class for balance columns to align end */
+.column.balance-column {
+    align-items: flex-end;
+}
+
+.card {
+    width: 50px;
+    height: auto;
+    border-radius: 10%;
+}
+
+.acc-name {
+    font-weight: bolder;
+    text-transform: uppercase;
+    font-size: medium;
+}
+
+.acc-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.acc-av-balance, .acc-balance {
+    font-size: 13pt;
+    font-weight: bold;
+}
+
+.acc-av-balance-txt, .acc-balance-txt {
+    font-size: 10pt;
+    font-weight: lighter;
+}
+
+@media screen and (max-width: 768px) {
+    .row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .column {
+        width: 100%;
+        padding: 5px;
+    }
+
+    .card {
+        width: 80px;
+    }
+
+    .acc-name, .acc-av-balance, .acc-balance {
+        font-size: small;
+    }
+
+    .acc-av-balance-txt, .acc-balance-txt {
+        font-size: x-small;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .column {
+        padding: 5px 0;
+    }
+
+    .card {
+        width: 40px;
+        height: 25px;
+    }
+
+    .acc-name, .acc-av-balance, .acc-balance {
+        font-size: smaller;
+    }
+
+    .acc-av-balance-txt, .acc-balance-txt {
+        font-size: xx-small;
+    }
+}

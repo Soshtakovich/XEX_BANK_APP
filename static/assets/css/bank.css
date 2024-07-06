@@ -1,0 +1,171 @@
+:root {
+    --background_colour: white;
+    --border_colour: blue;
+    --border_colour: green;
+    --row_colum_border_colour: none;
+    --tab_colour : var(--border_colour);
+    --hover_colour : pink;
+    --body_background :var(--background_colour);
+    --nav_border_colour : none;
+    --nav_tab_border_colour: blue;
+    --text_colour : black;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.user-details, .messages, .Logout{
+    font-weight: bold;
+}
+
+.logo img {
+    max-height: 50px;
+}
+
+.user-details {
+    font-family: Arial, sans-serif;
+}
+
+.messages {
+    font-family: Arial, sans-serif;
+}
+
+.content {
+    display: flex;
+}
+
+.navbar {
+    flex: 1;
+    background-color: #f0f0f0;
+    padding: 10px;
+    text-align: center;
+}
+
+.navbar ul {
+    list-style-type: none;
+}
+
+.navbar li {
+    margin-bottom: 40px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+    padding: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.navbar a:hover {
+    text-decoration: none;
+    color: #ffff;
+    display: block;
+    padding: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.navbar {
+    padding: 10px; /* Adjust padding as needed */
+    width: 100%;
+    border: 1px solid var(--nav_border_colour);
+    background-color: var(--background_colour);
+    box-shadow: 2px 2px 5px var(--background_colour);
+    border-radius: 5px;
+}
+
+.nav-button {
+    padding: 8px 12px; /* Adjust padding as needed */
+    cursor: pointer;
+    border: 1px solid var(--nav_tab_border_colour); /* Optional: Adds a border between items */
+    border-radius: 5px; /* Adjust as needed */
+    text-transform: uppercase;
+    font-weight: bold; /* 'bolder' changed to 'bold' */
+}
+
+.nav-button a.active {
+    color: red;
+}
+.tabcontent {
+    display: none;
+}
+.tabcontent.active {
+    display: block;
+}
+
+
+@media screen and (max-width: 768px) {
+    .navbar {
+        padding: 3px; /* Adjust padding for smaller screens */
+    }
+
+    .nav-button {
+        padding: 4px 7px; /* Adjust padding for smaller screens */
+    }
+
+    body{
+        font-size: smaller;
+    }
+}
+
+
+.nav-button:hover {
+    background-color: var(--tab_colour); /* Light gray background on hover */
+    color: var(--background_colour);
+    color: #fff; /* White text color when active */
+}
+
+.nav-button.active {
+    background-color: #007bff; /* Blue background when active */
+    color: #fff; /* White text color when active */
+}
+
+
+.main-section {
+    flex: 3;
+    padding: 20px;
+}
+
+
+.footer {
+    font-family: Arial, sans-serif;
+}
+
+
+.logout {
+    text-align: right; /* Align the button to the right */
+    margin-top: 10px; /* Adjust margin as needed */
+}
+
+.logout p {
+    color: white; /* Text color */
+    background-color: red; 
+    padding: 10px 20px; /* Padding for button */
+    cursor: pointer; /* Pointer cursor on hover */
+    border-radius: 5px; /* Rounded corners */
+    display: inline-block; /* Ensure block behaves inline */
+}
+
+.logout p:hover {
+    background-color: #007bff; 
+}
