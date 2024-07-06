@@ -2,10 +2,10 @@ import mysql.connector
 import pymysql.cursors
 
 db_config = {
-    'user': 'alx_banking',
-    'password': 'Fernando072903',
-    'host': 'sql56.jnb2.host-h.net',
-    'database': 'banking',
+    'user': '###########',
+    'password': '############',
+    'host': 'localhost',
+    'database': 'alx_banking',
     'cursorclass': pymysql.cursors.DictCursor
 }
 
@@ -17,10 +17,3 @@ def get_db_connection():
         database=db_config['database'],
         cursorclass=db_config['cursorclass']
     )
-
-# Example usage
-if __name__ == "__main__":
-    connection = get_db_connection()
-    if connection.open:
-        print("Connected to the database")
-        connection.close()
