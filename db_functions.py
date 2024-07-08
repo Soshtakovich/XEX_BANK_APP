@@ -26,8 +26,6 @@ def validate_user(username, password):
             session['name_s'] = user['name_s']
             session['surname'] = user['surname']
             return user
-        else:
-            #print("Debug: Password check failed.") 
     else:
         #print(f"Debug: No user found with username '{username}'.") 
     
