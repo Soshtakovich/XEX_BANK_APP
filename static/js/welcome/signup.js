@@ -16,11 +16,11 @@ document.addEventListener("DOMContentLoaded", function() {
                     const responseData = await response.json();
 
                     if (responseData.error) {
-                        alert(responseData.error); // Display error message from server
+                        alert(responseData.error); 
                     } else if (responseData.success) {
                         console.log("Signup successful!");
                         alert("Signup successful! You can now log in.");
-                        window.location.href = "/login"; // Redirect to login page
+                        window.location.href = "/login"; 
                     } else {
                         console.log("Unexpected response:", responseData);
                         alert("An error occurred. Please try again later.");
