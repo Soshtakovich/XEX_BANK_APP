@@ -3,10 +3,7 @@ import random
 import mysql.connector
 from connect import get_db_connection
 from flask import session
-
-
-
-import logging
+#import logging
 
 def validate_user(username, password):
     connection = get_db_connection()
@@ -17,7 +14,6 @@ def validate_user(username, password):
     connection.close()
     
     if row:
-        #print("Debug: Retrieved row from database:", row)  # Debug print
         if bcrypt.checkpw(password.encode('utf-8'), row['password'].encode('utf-8')):
             user = {
                 'user_id': row['user_id'],
@@ -25,19 +21,17 @@ def validate_user(username, password):
                 'name_s': row['name_s'],
                 'surname': row['surname']
             }
-            # Storing user details in session
             session['user_id'] = user['user_id']
             session['username'] = user['username']
             session['name_s'] = user['name_s']
             session['surname'] = user['surname']
             return user
         else:
-            #print("Debug: Password check failed.")  # Debug print
+            #print("Debug: Password check failed.") 
     else:
-        #print(f"Debug: No user found with username '{username}'.")  # Debug print
+        #print(f"Debug: No user found with username '{username}'.") 
     
     return None
-
 
 
 def generate_random_amount(min_amount, max_amount):
@@ -58,7 +52,6 @@ def create_user(id_number, username, surname, name_s, age, date_of_birth, passwo
         # Begin transaction
         db.autocommit = False
 
-        # Insert user into Users table
         insert_user_query = """
         INSERT INTO Users (id_number, username, surname, name_s, age, date_of_birth, password, email, phone, address)
         VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
@@ -66,7 +59,6 @@ def create_user(id_number, username, surname, name_s, age, date_of_birth, passwo
         cursor.execute(insert_user_query, (id_number, username, surname, name_s, age, date_of_birth, hashed_password, email, phone, address))
         user_id = cursor.lastrowid
 
-        # Insert accounts and set initial balances
         account_types = ['Debit', 'Savings', 'Credit', 'Investment']
         account_balances = {
             'Debit': generate_random_amount(100, 809),
@@ -86,7 +78,6 @@ def create_user(id_number, username, surname, name_s, age, date_of_birth, passwo
             """
             cursor.execute(insert_account_query, (user_id, account_type, account_no, balance, available_balance))
 
-            # Special handling for Credit and Investment accounts
             if account_type == 'Credit':
                 account_id = cursor.lastrowid
                 credit_available = generate_random_amount(600, 10000)
@@ -115,16 +106,13 @@ def create_user(id_number, username, surname, name_s, age, date_of_birth, passwo
                 """
                 cursor.execute(insert_investment_query, (account_id, principal, balance, installment, term, interest_rate))
 
-        # Commit transaction
         db.commit()
         return True
     except mysql.connector.Error as err:
-        # Rollback transaction on error
         db.rollback()
         print(f"Error: {err}")
         return False
     finally:
-        # Restore autocommit mode and clean up resources
         db.autocommit = True
         cursor.close()
         db.close()
@@ -144,7 +132,6 @@ def get_transactions(user_id):
 
         cursor.execute(query, (user_id,))
         transactions = cursor.fetchall()
-
         #print(transactions)
         return transactions
 
