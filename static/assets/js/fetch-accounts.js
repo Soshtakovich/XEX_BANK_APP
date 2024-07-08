@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
         document.getElementById('user-name').textContent = `${userName} ${userSurname}`;
     } else {
         if (!userId) {
-            console.error('User ID not found in session storage');
+            #console.error('User ID not found in session storage');
             return;
         }
 
@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 .then(response => response.json())
                 .then(data => {
                     if (data.error) {
-                        console.error('Error:', data.error);
+                        #console.error('Error:', data.error);
                     } else {
                         document.getElementById('user-name').textContent = `${data.name_s} ${data.surname}`;
                         sessionStorage.setItem('user_name', data.name_s);
@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 .then(response => response.json())
                 .then(data => {
                     if (data.error) {
-                        console.error('Error:', data.error);
+                        #console.error('Error:', data.error);
                     } else {
                         data.forEach(account => {
                             if (account.account_type === 'Debit') {
