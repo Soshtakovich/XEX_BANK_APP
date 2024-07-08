@@ -5,7 +5,7 @@ function fetchTransactions() {
             if (data.success) {
                 displayTransactions(data.transactions);
             } else {
-                console.error('Failed to fetch transactions:', data.message);
+                #console.error('Failed to fetch transactions:', data.message);
             }
         })
         .catch(error => console.error('Error fetching transactions:', error));
@@ -13,7 +13,7 @@ function fetchTransactions() {
 
 function displayTransactions(transactions) {
     const tableBody = document.getElementById('transactions-table-body');
-    tableBody.innerHTML = ''; // Clear previous data
+    tableBody.innerHTML = '';
 
     transactions.forEach(transaction => {
         const row = document.createElement('tr');
@@ -31,7 +31,7 @@ function displayTransactions(transactions) {
         row.appendChild(transactionTypeCell);
 
         const amountCell = document.createElement('td');
-        amountCell.textContent = 'R ' + transaction.amount;  // Concatenate 'R ' with amount
+        amountCell.textContent = 'R ' + transaction.amount; 
         row.appendChild(amountCell);
         
         const descriptionCell = document.createElement('td');
@@ -46,7 +46,6 @@ function displayTransactions(transactions) {
     });
 }
 
-// Call fetchTransactions when the page loads or as needed
 document.addEventListener('DOMContentLoaded', function() {
     fetchTransactions();
 });
