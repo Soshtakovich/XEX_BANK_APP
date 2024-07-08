@@ -17,7 +17,7 @@ def validate_user(username, password):
     connection.close()
     
     if row:
-        print("Debug: Retrieved row from database:", row)  # Debug print
+        #print("Debug: Retrieved row from database:", row)  # Debug print
         if bcrypt.checkpw(password.encode('utf-8'), row['password'].encode('utf-8')):
             user = {
                 'user_id': row['user_id'],
@@ -32,9 +32,9 @@ def validate_user(username, password):
             session['surname'] = user['surname']
             return user
         else:
-            print("Debug: Password check failed.")  # Debug print
+            #print("Debug: Password check failed.")  # Debug print
     else:
-        print(f"Debug: No user found with username '{username}'.")  # Debug print
+        #print(f"Debug: No user found with username '{username}'.")  # Debug print
     
     return None
 
