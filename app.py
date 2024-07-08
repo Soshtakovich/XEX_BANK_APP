@@ -7,7 +7,7 @@ from flask_cors import CORS
 
 
 app = Flask(__name__)
-app.secret_key = 'your_secret_key'  # Replace with a secure secret key
+app.secret_key = '#################'
 CORS(app)
 
 @app.route('/')
