@@ -8,7 +8,7 @@ function updateUserName() {
         document.getElementById('user-name').textContent = `${userName} ${userSurname}`;
     } else {
         if (!userId) {
-            console.error('User ID not found in session storage');
+            #console.error('User ID not found in session storage');
             return;
         }
 
@@ -16,7 +16,7 @@ function updateUserName() {
             .then(response => response.json())
             .then(data => {
                 if (data.error) {
-                    console.error('Error:', data.error);
+                    #console.error('Error:', data.error);
                 } else {
                     document.getElementById('user-name').textContent = `${data.name_s} ${data.surname}`;
                     sessionStorage.setItem('user_name', data.name_s);
@@ -27,7 +27,7 @@ function updateUserName() {
     }
 }
 
-// Function to update account balances after transactions
+
 function updateAccountBalances() {
     const userId = sessionStorage.getItem('user_id');
 
@@ -57,7 +57,7 @@ function updateAccountBalances() {
         .catch(error => console.error('Error fetching account balances:', error));
 }
 
-// Event listeners for transaction buttons
+
 document.addEventListener('DOMContentLoaded', function () {
     updateUserName();
     updateAccountBalances();
@@ -84,7 +84,7 @@ function handleTransfer() {
     .then(data => {
         if (data.success) {
             alert('Transfer successful');
-            location.reload();  // Reload the page on success
+            location.reload(); 
         } else {
             alert(data.message || 'Transfer failed');
         }
@@ -115,7 +115,7 @@ function handleWithdraw() {
         if (data.success) {
             const code = data.withdrawalCode; // Assuming the response includes a withdrawal code
             alert(`Withdrawal successful. Your withdrawal code is: ${code}`);
-            location.reload();  // Reload the page on success
+            location.reload(); 
         } else {
             alert(data.message || 'Withdrawal failed');
         }
