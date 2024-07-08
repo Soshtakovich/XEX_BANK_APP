@@ -16,11 +16,11 @@ document.addEventListener("DOMContentLoaded", function() {
                     const responseData = await response.json();
 
                     if (responseData.error) {
-                        alert(responseData.error); // Display error message from server
+                        alert(responseData.error);
                     } else if (responseData.success) {
                         console.log("Login successful!");
-                        sessionStorage.setItem('user_id', responseData.user_id); // Store user_id in sessionStorage
-                        window.location.href = "/bank"; // Redirect to home page
+                        sessionStorage.setItem('user_id', responseData.user_id); 
+                        window.location.href = "/bank"; 
                     } else {
                         console.log("Unexpected response:", responseData);
                         alert("An error occurred. Please try again later.");
